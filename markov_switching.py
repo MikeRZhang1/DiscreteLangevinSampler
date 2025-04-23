@@ -7,7 +7,7 @@ import os
 # -------------------------
 # Simulate HMM
 
-def simulate_hmm(T=300):
+def simulate_hmm(T=10):
     p00, p11 = 0.9, 0.8
     mu = np.array([0.0, 2.0])
     S = np.zeros(T, int)
@@ -85,7 +85,7 @@ def dmala(S, g, alpha):
 
 os.makedirs("results", exist_ok=True)
 
-T = 300
+T = 10
 S0, g = simulate_hmm(T)
 # True stationary P(S=1) = (1-p00)/(2 - p00 - p11)
 true_pi1 = (1 - 0.9) / (2 - 0.9 - 0.8)
